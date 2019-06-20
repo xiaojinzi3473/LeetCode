@@ -32,6 +32,18 @@ class Solution2(object):
             head = head.next
         return None
 
+    
+class Solution3():
+    def detectCycle(self, head: Node):
+        slow = fast = head
+        while slow and fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            if slow == fast:
+                return slow
+        return None
+    
+
 if __name__ == '__main__':
     #start_time = datetime.datetime.now()
     #print(start_time)
